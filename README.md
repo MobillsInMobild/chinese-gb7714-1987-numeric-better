@@ -1,0 +1,2 @@
+# chinese-gb7714-1987-numeric-better
+[chinese-gb7714-1987-numeric.csl](https://github.com/citation-style-language/styles/blob/master/chinese-gb7714-1987-numeric.csl) 基础上修改，作者首字母大写，解决了“等 et al” 等中英混排问题。
