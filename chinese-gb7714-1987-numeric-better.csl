@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="zh-CN">
   <info>
-    <title>China National Standard GB/T 7714-1987 (numeric, 中文)</title>
+    <title>China National Standard GB/T 7714-1987 better (numeric, 中文)</title>
     <id>http://www.zotero.org/styles/chinese-gb7714-1987-numeric</id>
     <link href="http://www.zotero.org/styles/chinese-gb7714-1987-numeric" rel="self"/>
     <link href="http://www.lib.tsinghua.edu.cn/service/GB7714-87.doc" rel="documentation"/>
     <author>
-      <name>heromyth</name>
-      <email>zxpmyth@yahoo.com.cn</email>
+      <name>Mobilis In Mobili</name>
+      <email>vgeekv@163.com.cn</email>
     </author>
     <category citation-format="numeric"/>
     <category field="engineering"/>
@@ -68,7 +68,14 @@
         <text macro="title" suffix="[A]. "/>
       </else-if>
       <else-if type="chapter paper-conference" match="any">
-        <text macro="title" suffix="[A]. 见: "/>
+        <choose>
+          <else-if locale="en">
+            <text macro="title" suffix="[A]. In: "/>
+          </else-if>
+          <else>
+            <text macro="title" suffix="[A]. 见: "/>
+          </else>
+        </choose>
       </else-if>
       <else-if type="webpage">
         <text macro="title" suffix="[EB/OL]. "/>
@@ -179,6 +186,25 @@
     </layout>
   </citation>
   <bibliography et-al-min="4" et-al-use-first="3" second-field-align="flush" entry-spacing="0">
+    <layout suffix="." locale="en">
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <text macro="author" suffix=". "/>
+      <text macro="titleField"/>
+      <text macro="secondaryAuthor" suffix=". "/>
+      <text variable="edition" prefix="第" suffix="版. "/>
+      <text macro="publisher"/>
+      <text macro="pageField" prefix=": "/>
+      <text macro="referenceDate"/>
+      <choose>
+        <if type="webpage" match="any">
+          <text macro="access" prefix=". "/>
+        </if>
+      </choose>
+      <text macro="recipient"/>
+      <text macro="interviewer"/>
+      <text macro="composer"/>
+      <text macro="original-author"/>
+    </layout>
     <layout suffix=".">
       <text variable="citation-number" prefix="[" suffix="]"/>
       <text macro="author" suffix=". "/>
